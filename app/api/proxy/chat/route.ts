@@ -1,7 +1,7 @@
 // app/api/proxy/chat/route.ts
 import { NextResponse } from "next/server";
 
-export const runtime = "node"; // ensure node runtime for streaming if needed
+export const runtime = "nodejs"; // <-- use "nodejs", not "node"
 
 export async function POST(req: Request) {
   try {
