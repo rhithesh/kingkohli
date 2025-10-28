@@ -1,4 +1,4 @@
-ViratKohli Chat — Next.js Chatbot Frontend (README)
+
 
 A lightweight Next.js chat UI that talks like Virat Kohli  built to connect to a local OpenAI compatible LLM ( your kingkohliv3 served by llama.cpp).
 Designed for streaming responses, small footprint, and easy integration with your Next.js app.
