@@ -109,6 +109,8 @@ export default function Chat() {
     const requestBody = {
       model: "./models/kingkohliv3.gguf",
       stream: true,
+      max_tokens: 200,
+
       messages: [
         {
           role: "system",
