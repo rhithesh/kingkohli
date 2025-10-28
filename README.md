@@ -11,5 +11,7 @@ Works with any OpenAI-compatible API (including llama.cpp)
 
 Streaming completions (token-by-token) for low-latency UX
 
-hf:https://huggingface.co/hitheshrrr/kingKohli4q just 4gb so you can run this on your local machine with 8gb of ram with ollam or LMstudio.
+base model is mistral-7b
+hf:https://huggingface.co/hitheshrrr/kingKohli4q just 4gb so you can run this on your local machine with 8gb of ram with ollam or LMstudio. The model is quantized to Q4_K_M.
 
+model trained on 6 hours of kohli interview's, trainning method is SFT and DPO.  
