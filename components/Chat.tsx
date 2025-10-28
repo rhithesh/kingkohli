@@ -6,6 +6,7 @@ import BirdsOfParadiseScene from "./ui/BirdsOfParadise";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { GlassmorphicStickyHeader } from "./ui/sticky-header";
+import BackgroundImage from "./BackgroundImage";
 
 type Message = {
   id: string;
@@ -214,15 +215,17 @@ export default function Chat() {
      <div className="relative min-h-screen w-full overflow-hidden">
        {/* background animation */}
      
+       <BackgroundImage />
 
        {/* Controls */}
     
 
-       <div className="flex flex-col h-screen">
+       <div className="flex flex-col h-screen min-h-0">
 
     
          {/* Chat Box Container */}
-         <div className="flex-1 mx-6 mt-6 mb-4   rounded-2xl   shadow-[0_4px_20px_rgba(0,0,0,0.15)] overflow-hidden">
+         <div className="flex flex-col flex-1 mx-6 mt-6 mb-4 bg-[url('https://noeawrojjd.ufs.sh/f/hhi7TjKirdIgsw461qU2PMmcntxhTqy9rGa2BdoOKCXDLUHl')] rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.15)] overflow-hidden min-h-0">
+
 {    !activeId  ?       <div className="flex flex-col z-50 flex-wrap    absolute top-40 left-120 justify-center gap-3 px-6 mb-4">
   {[
     "Hey Virat, what did you eat today?",
@@ -244,8 +247,9 @@ export default function Chat() {
 </div> : null}
            <main
              ref={scrollRef}
-             className="h-[600px] backdrop-blur-2xl bg-transparent overflow-y-auto space-y-5  p-4"
-           >
+             className="flex-1 bg-transparent overflow-y-scroll p-4 space-y-5 pb-[calc(96px+env(safe-area-inset-bottom))] min-h-0"
+             style={{ WebkitOverflowScrolling: "touch" }}
+                    >
 
 <button
               onClick={(e) => {
@@ -253,17 +257,12 @@ export default function Chat() {
                 clearConversation();
               }}
               disabled={isWaiting}
-              className="px-6 py-3 bg-white text-black rounded-xl font-medium border border-white/30 transition-all"
+              className="px-6 py-3 bg-white cursor-pointer text-black rounded-xl font-medium border border-white/30 transition-all"
             >
               reset
             </button>
               <div 
-                className="absolute inset-0 -z-10"
-                style={{
-                  filter: `blur(${2}px)`
-                }}
               >
-                <BirdsOfParadiseScene projectId="JzoPqq1YZR4tcKU5Xs0w" />
               </div>
              <AnimatePresence>
                {current.map((m) => (
