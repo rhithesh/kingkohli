@@ -14,7 +14,7 @@ type Message = {
   ts: string;
 };
 
-const VIRAT_KOHLI_API = "http://52.202.187.180:8000/v1/chat/completions";
+const VIRAT_KOHLI_API = "/api/proxy/chat";
 
 function uid() {
   return Math.random().toString(36).slice(2, 9);
